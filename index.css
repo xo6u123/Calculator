@@ -1,0 +1,96 @@
+
+:root {
+    --scale: 1px;
+    --window-height: calc(322 * var(--scale));
+    --window-width: calc(232 * var(--scale));
+    --calculator-border-radius: 10px;
+}
+
+.macos-top-bar {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 6px;
+    top: 6px;
+}
+
+
+
+
+
+
+body {
+    box-sizing: border-box;
+    font-family: Helvetica,Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    position: relative;
+}
+
+table {
+    table-layout: fixed;
+    width: var(--window-width);
+}
+
+/* tr {
+    width: var(--window-width) ;
+} */
+
+td {
+    height: calc(var(--window-height) / 7);
+    background-color: #548edb;
+    text-align: center;
+    border: calc(var(--scale) * 0.5) solid #092861;
+    color: white !important;
+    font-size: calc(22 * var(--scale)) ;
+    width: 10px !important ;
+}
+
+td:hover {
+    background-color: #6ba2ac;
+}
+
+tr:nth-child(2) td {
+    background-color: #21748d !important;
+}
+
+tr:nth-child(2) td:hover {
+    background-color: #6391e6 !important;
+}
+
+tr td:last-child {
+    background-color: orange !important;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--calculator-border-radius);
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 var(--calculator-border-radius) 0;
+}
+
+tr td:last-child:hover {
+    background-color: #17772f !important;
+}
+
+#display {
+    height:calc(var(--window-height) * 7 / 28 - 2px) !important;
+    text-align: right;
+    background-color: #245069 !important;
+    padding-right: 20px;
+    font-size: calc(56 * var(--scale));
+    font-weight: 100;
+    border-radius: var(--calculator-border-radius) var(--calculator-border-radius) 0 0 ;
+    vertical-align: bottom;
+}
+
+
+tr:last-child td {
+    /* background-color: red!important; */
+    height: calc(var(--window-height) / 7 + 2px) !important;
+}
